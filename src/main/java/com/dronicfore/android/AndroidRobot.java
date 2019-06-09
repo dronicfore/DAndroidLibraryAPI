@@ -34,9 +34,9 @@ public class AndroidRobot extends Robot {
      * @see CountDownTimer
      */
     @Override
-    public void doInBackground(/*final Activity activity, */long wait, final Runnable code) {
+    public void doAnotherThread(/*final Activity activity, */long wait, final Runnable code) {
         // Android implementation
-        super.doInBackground(wait, new Runnable() {
+        super.doAnotherThread(wait, new Runnable() {
             @Override
             public void run() {
 //                if (!activity.isFinishing()) {
@@ -49,7 +49,7 @@ public class AndroidRobot extends Robot {
     }
 
     /**
-     * For example, You can use this to start long-running operations concerning your app
+     * For example, You can use this to perform long-running operations concerning your app
      * without a user interface.
      *
      * <p>
@@ -61,8 +61,8 @@ public class AndroidRobot extends Robot {
      *
      * @see Service
      */
-    public void doInBackground(Service service) {
-        service.startService(new Intent());
+    public void doInBackground(Intent intent, Service service) {
+        service.startService(intent);
     }
 
 //    public void doInBackground(Activity activity, long butWaitTillMillis, final Runnable code) {
