@@ -93,7 +93,7 @@ public class AndroidRobot extends Robot {
      */
     @Override
     public File enter(@NonNull File folder, @NonNull String... continueWithPath) {
-        super.enter(folder, continueWithPath);
+        return super.enter(folder, continueWithPath);
     }
 
 }
