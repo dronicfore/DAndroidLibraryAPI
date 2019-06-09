@@ -13,7 +13,7 @@ import com.dronicfore.java.Robot;
 import java.io.File;
 
 /**
- * This Robot is still under Construction...
+ * <b>WARNING</b>: This Robot is still under Construction...
  *
  * @author Moses Katsina
  */
@@ -33,6 +33,7 @@ public class AndroidRobot extends Robot {
      *
      * @see CountDownTimer
      */
+    @Override
     public void doInBackground(/*final Activity activity, */long wait, final Runnable code) {
         // Android implementation
         super.doInBackground(wait, new Runnable() {
@@ -80,37 +81,19 @@ public class AndroidRobot extends Robot {
 //    }
 
     /**
-     * <p>
-     * <b>An operation that sends this Robot to a Folder in your computer.</b>
-     * </p>
+     * {@inheritDoc}
      *
-     * For example, You can use this to access a Directory or File kept in the local computer.
-     *
-     * @param folder The File this Robot will be sent to.
-     *
-     * @return A {@link File} which describes where the robot was sent to.
+     * @see File
+     * @see File#createTempFile(String, String)
      *
      * @see Context#getDataDir()
      * @see Context#getFilesDir()
      * @see Context#getCacheDir()
      * @see Context#getObbDir()
-     *
-     * @see File
-     * @see File#createTempFile(String, String)
      */
+    @Override
     public File enter(@NonNull File folder, @NonNull String... continueWithPath) {
-        // initialize a root reference to return if (continueWithPath[].length == 0)
-        String pathString = "";
-
-        // This loop will only execute if (continueWithPath[].length > 0)! (or was provided)
-        for (String v: continueWithPath) {
-            // modify pathString since a path was provided
-            // pathString = pathString+"/"+"v";
-            // pathString += "/"+"v";
-            pathString = pathString.concat(File.separatorChar+v);
-        }
-
-        return new File(folder, pathString);
+        super.enter(folder, continueWithPath);
     }
 
 }
