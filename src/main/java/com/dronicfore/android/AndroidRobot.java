@@ -21,8 +21,10 @@ public class AndroidRobot extends Robot {
 
     private static AndroidRobot me = null;
 
+    protected AndroidRobot() {}
+
     /**
-     * @return An {@link AndroidRobot}.
+     * @return {@link AndroidRobot}.
      */
     public static AndroidRobot comeHere() {
         return me != null ? me : (me = new AndroidRobot());

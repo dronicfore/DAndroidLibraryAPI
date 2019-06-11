@@ -1,10 +1,11 @@
-package com.dronicfore.android;
+package com.dronicfore.android.firebase;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.support.annotation.RequiresApi;
 
+import com.dronicfore.android.AndroidRobot;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -21,13 +22,13 @@ import com.dronicfore.java.Robot;
  *
  * <h1>And Guess What!</h1>
  *
- * You may use {@link #comeHere()} to call this robot from <b>anywhere! at anytime!</b> in your code.
+ * You may use {@link #comeHere()} to call this robot from <b>anywhere at anytime</b> in your code.
  *
  * <p>
  * <b>NOTE:</b> Firebase has only <b>One</b> robot
  * </p>
  *
- * Meaning FirebaseRobot responds to only one {@code Thread} at a Time <b>:)</b>.
+ * Meaning FirebaseRobot responds to only one Thread at a Time <b>:)</b>.
  *
  * @author Moses Katsina
  */
@@ -48,7 +49,7 @@ public final class FirebaseRobot extends Robot {
      * Allows you to interact with this robot.
      *
      * @return A {@link FirebaseRobot}.
-     * That can do <b>anything!</b> on a <a href="https://console.firebase.google.com">Firebase Project</a>.
+     * That can do <b>anything</b> on a <a href="https://console.firebase.google.com">Firebase Project</a>.
      */
     public static synchronized FirebaseRobot comeHere() {
         return me != null ? me : (me = new FirebaseRobot());

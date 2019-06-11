@@ -37,7 +37,7 @@ dependencies {
     // ********* Android Implementation [Ends HERE!] ********* //
 
     // ********* DJ Implementation [Starts HERE!] ********* //
-    api 'com.github.dronicfore:DJavaLibraryAPI:master-SNAPSHOT'
+    api 'com.github.dronicfore:DJavaLibraryAPI:ec5e951885'
     // ********* DJ Implementation [Ends HERE!] ********* //
 
     // ********* Firebase Implementation [Starts HERE!] ********* //
@@ -67,8 +67,6 @@ buildscript {
     dependencies {
         classpath 'com.android.tools.build:gradle:3.1.4'
 
-        classpath 'com.google.gms:google-services:4.2.0' // root project google-services plugin (Required by Firebase)
-
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
@@ -78,6 +76,8 @@ allprojects {
     repositories {
         google()
         jcenter()
+
+        // This line is Required for DJavaLibraryAPI to work on this Project
         maven { url 'https://jitpack.io' }
     }
 }
