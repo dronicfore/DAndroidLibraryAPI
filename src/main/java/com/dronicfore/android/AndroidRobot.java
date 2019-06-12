@@ -36,9 +36,9 @@ public class AndroidRobot extends Robot {
      * @see CountDownTimer
      */
     @Override
-    public void doInAnotherThread(/*final Activity activity, */long wait, final Runnable code) {
+    public void doInAnotherThread(/*final Activity activity, */long delay, final Runnable code) {
         // Android implementation
-        super.doInAnotherThread(wait, new Runnable() {
+        super.doInAnotherThread(delay, new Runnable() {
             @Override
             public void run() {
 //                if (!activity.isFinishing()) {
@@ -81,6 +81,16 @@ public class AndroidRobot extends Robot {
 ////            }
 ////        });
 //    }
+
+    /**
+     * DO NOT USE.
+     *
+     * @throws UnsupportedOperationException
+     */
+    @Override
+    public void doPauseOrResume(Thread thread) {
+        throw new UnsupportedOperationException("Pausing and Resuming of Threads is not allowed on Android");
+    }
 
     /**
      * {@inheritDoc}
