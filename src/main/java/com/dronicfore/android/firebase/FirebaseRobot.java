@@ -282,8 +282,8 @@ public final class FirebaseRobot extends Robot {
     }
 
     @Override
-    public void doAnotherThread(long wait, Runnable code) {
-        AndroidRobot.comeHere().doAnotherThread(wait, code);
+    public void doInAnotherThread(long wait, Runnable code) {
+        AndroidRobot.comeHere().doInAnotherThread(wait, code);
     }
 
 }

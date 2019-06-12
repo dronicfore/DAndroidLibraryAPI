@@ -24,7 +24,7 @@ public class AndroidRobot extends Robot {
     protected AndroidRobot() {}
 
     /**
-     * @return {@link AndroidRobot}.
+     * @return A {@link AndroidRobot}.
      */
     public static AndroidRobot comeHere() {
         return me != null ? me : (me = new AndroidRobot());
@@ -36,9 +36,9 @@ public class AndroidRobot extends Robot {
      * @see CountDownTimer
      */
     @Override
-    public void doAnotherThread(/*final Activity activity, */long wait, final Runnable code) {
+    public void doInAnotherThread(/*final Activity activity, */long wait, final Runnable code) {
         // Android implementation
-        super.doAnotherThread(wait, new Runnable() {
+        super.doInAnotherThread(wait, new Runnable() {
             @Override
             public void run() {
 //                if (!activity.isFinishing()) {
