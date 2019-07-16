@@ -1,8 +1,10 @@
 package com.dronicfore.android;
 
+import android.app.Activity;
 import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.CountDownTimer;
 import android.os.Handler;
 import android.os.Looper;
@@ -21,13 +23,49 @@ public class AndroidRobot extends Robot {
 
     private static AndroidRobot me = null;
 
-    protected AndroidRobot() {}
+    protected AndroidRobot() {
+
+    }
 
     /**
-     * @return A {@link AndroidRobot}.
+     * Allows you to interact with this robot.
+     *
+     * @return An {@link AndroidRobot}.
      */
     public static AndroidRobot comeHere() {
         return me != null ? me : (me = new AndroidRobot());
+    }
+
+    /**
+     * @see #enterDatabase(Context)
+     */
+    public SharedPreferences enterDatabase(Activity activity) {
+//        return activity.getPreferences(Context.MODE_PRIVATE);
+        return enterDatabase(activity);
+    }
+
+    /**
+     * An operation that sends this Robot to a Database.
+     *
+     * <p>
+     * For example, You can use this to <b>Store</b> or <b>Read</b> textual
+     * data, like user information ({@code String, int, double, boolean}).
+     * </p>
+     *
+     * <ul>
+     * <li>
+     * This should only be used for <b>NOTE TAKING</b>.
+     * </li>
+     * </ul>
+     *
+     * @param context The context this Robot will be sent to.
+     *
+     * @return {@link SharedPreferences} of the context.
+     *
+     * @see SharedPreferences
+     */
+    public SharedPreferences enterDatabase(Context context) {
+        return context.getSharedPreferences(context.getClass().getName(), Context.MODE_PRIVATE);
     }
 
     /**
@@ -63,8 +101,8 @@ public class AndroidRobot extends Robot {
      *
      * @see Service
      */
-    public void doInBackground(Intent intent, Service service) {
-        service.startService(intent);
+    public void doInBackground(Intent extra, Service service) {
+        service.startService(extra);
     }
 
 //    public void doInBackground(Activity activity, long butWaitTillMillis, final Runnable code) {
