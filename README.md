@@ -1,2 +1,2 @@
 # DAndroidLibraryAPI
-MAY THE Androids BE WITH YOU AND LET THOSE Androids DO THE JOB!
+MAY THE Androids BE WITH YOU AND LET THE Androids DO THE JOB!
