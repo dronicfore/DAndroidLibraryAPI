@@ -77,7 +77,7 @@ public class AndroidRobot extends Robot {
 	 * @param where The place ({@link Filterable} Adapters) to search.
 	 * @return true If the search event was successful.
 	 */
-	public boolean doSearch(Object object, Filterable... where) {
+	public boolean search(Object object, Filterable... where) {
 		for(Filterable filter : where) filter.getFilter().filter(object.toString());
 		return where != null && where.length > 0;
 	}
@@ -89,14 +89,14 @@ public class AndroidRobot extends Robot {
 	 * @param where The views to search.
 	 * @return true If the search event was successful.
 	 */
-	public boolean doSearch(Object object, AdapterView... where) {
+	public boolean search(Object object, AdapterView... where) {
 		Filterable[] filters = new Filterable[where.length];
 		for(int i = 0; i < where.length; i++) {
 			AdapterView view = where[i];
 			if (!(view.getAdapter() instanceof Filterable)) throw new UnsupportedOperationException("The " + view + " adapter (" + view.getAdapter() + ") must implement android.widget.Filterable related interface to continue (for example: try using ArrayAdapter)");
 			filters[i] = (Filterable) view.getAdapter();
 		}
-		return AndroidRobot.this.doSearch(object, filters);
+		return AndroidRobot.this.search(object, filters);
 	}
 
     /**
