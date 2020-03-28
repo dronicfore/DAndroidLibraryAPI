@@ -1,4 +1,4 @@
 # DAndroidLibraryAPI
-MAY THE Androids BE WITH YOU AND LET THE Androids DO THE JOB!
+Contains Robots for building Android related applications
 
 [![](https://jitpack.io/v/dronicfore/da-lapi.svg)](https://jitpack.io/#dronicfore/da-lapi)
