@@ -39,6 +39,8 @@ public class AndroidRobot extends Robot {
     }
 
     /**
+     * @deprecated
+     * 
      * @see #enterDatabase(Context)
      */
     public SharedPreferences enterDatabase(Activity activity) {
@@ -47,6 +49,8 @@ public class AndroidRobot extends Robot {
     }
 
     /**
+     * @deprecated
+     * 
      * An operation that sends this Robot to a Database.
      *
      * <p>
@@ -90,7 +94,7 @@ public class AndroidRobot extends Robot {
 	 * @return true If the search event was successful.
 	 */
 	public boolean search(Object object, AdapterView... where) {
-		Filterable[] filters = new Filterable[where.length];
+		Filterable[] filters = new Filterable[where != null ? where.length : 0];
 		for(int i = 0; i < where.length; i++) {
 			AdapterView view = where[i];
 			if (!(view.getAdapter() instanceof Filterable)) throw new UnsupportedOperationException("The " + view + " adapter (" + view.getAdapter() + ") must implement android.widget.Filterable related interface to continue (for example: try using ArrayAdapter)");
@@ -105,9 +109,9 @@ public class AndroidRobot extends Robot {
      * @see CountDownTimer
      */
     @Override
-    public void doInAnotherThread(/*final Activity activity, */long delay, final Runnable code) {
+    public Thread doInAnotherThread(/*final Activity activity, */long delay, final Runnable code) {
         // Android implementation
-        super.doInAnotherThread(delay, new Runnable() {
+        return super.doInAnotherThread(delay, new Runnable() {
             @Override
             public void run() {
 //                if (!activity.isFinishing()) {
@@ -120,6 +124,8 @@ public class AndroidRobot extends Robot {
     }
 
     /**
+     * @deprecated
+     * 
      * For example, You can use this to perform long-running operations concerning your app
      * without a user interface.
      *
