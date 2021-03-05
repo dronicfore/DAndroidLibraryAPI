@@ -44,8 +44,8 @@ dependencies {
     // ********* Firebase Implementation [Starts HERE!] ********* //
     //    api 'com.google.firebase:firebase-analytics:18.0.2'
     api 'com.google.firebase:firebase-analytics:15.0.0'
-    api 'com.google.firebase:firebase-auth:20.0.3'
-    //    api 'com.google.firebase:firebase-auth:17.0.0'
+    //    api 'com.google.firebase:firebase-auth:20.0.3'
+    api 'com.google.firebase:firebase-auth:17.0.0'
     api 'com.google.firebase:firebase-database:19.6.0'
     //    api 'com.google.firebase:firebase-database:17.0.0'
     //    api 'com.google.firebase:firebase-database:16.0.6'
