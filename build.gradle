@@ -38,7 +38,7 @@ dependencies {
     // ********* Android Implementation [Ends HERE!] ********* //
 
     // ********* DJ Implementation [Starts HERE!] ********* //
-    api 'com.github.dronicfore:dj-lapi:1.0.1p7'
+    api 'com.github.dronicfore:dj-lapi:1.0.1p8'
     // ********* DJ Implementation [Ends HERE!] ********* //
 
     // ********* Firebase Implementation [Starts HERE!] ********* //
